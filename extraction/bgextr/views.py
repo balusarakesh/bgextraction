@@ -11,7 +11,7 @@ from boto.s3.key import Key
 
 def upload_to_s3(location):
     print location
-    conn = boto.connect_s3(aws_access_key_id='AKIAI4AR5MAHBVGFMNXQ', aws_secret_access_key='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')
+    conn = boto.s3.connect_to_region('us-west-1',aws_access_key_id='', aws_secret_access_key='')
     if os.path.exists(location):
         bucket = conn.get_bucket('bgextraction')
         key = Key(bucket)
